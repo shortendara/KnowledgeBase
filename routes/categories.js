@@ -13,11 +13,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res){
-	Category.getCategoryById(req.params.id, function(err, categorie){
+	Category.getCategoryById(req.params.id, function(err, category){
 		if(err){
 			console.log(err);
 		}
-		res.json(categorie);
+		res.json(category);
 	});
 });
 

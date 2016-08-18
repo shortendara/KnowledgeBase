@@ -1,1 +1,14 @@
-Article Detail View
+<div ng-controller="ArticleDetailsCtrl">
+	<a href="#/articles">Go Back</a>
+	<H1>{{article.title}}</H1>
+	<small>Posted on: <span ng-bind="article.date | date:'MM/dd/yyyy'"></span></small>
+	<hr>
+	<div>
+		{{article.body}}
+	</div>
+	<br>
+	<div class="actions">
+		<a href="#/articles/edit/{{article._id}}" class="btn btn-default">Edit</a>
+		<a href="#" class="btn btn-danger" ng-click="removeArticle()">Delete Article</a>
+	</div>
+</div>
