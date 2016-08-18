@@ -13,20 +13,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res){
-	Category.getCategoryById(req.params.id, function(err, categories){
+	Category.getCategoryById(req.params.id, function(err, categorie){
 		if(err){
 			console.log(err);
 		}
-		res.json(categories);
-	});
-});
-
-router.get('/category/:category', function(req, res, next){
-	Category.getArticlesByCategory(req.params.category, function(err, articles){
-		if(err){
-			console.log(err);
-		}
-		res.json(articles);
+		res.json(categorie);
 	});
 });
 
