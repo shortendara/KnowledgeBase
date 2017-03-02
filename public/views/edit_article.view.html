@@ -1,1 +1,23 @@
-Edit Article
+<div ng-controller="ArticlesEditCtrl">
+	<h3>Edit Article</h3>
+	<form ng-submit="updateArticle()">
+	  <div class="form-group">
+	    <label>Article Title</label>
+	    <input type="text" class="form-control" ng-model="article.title" name="article_title" placeholder="Article Title">
+	  </div>
+
+	  <div class="form-group">
+	    <label>Category</label>
+	    <select class="form-control" ng-model="article.category" name="Category">
+	    	<option ng-repeat="category in categories" value="category.name" default="Choose Category">{{category.name}}</option>
+	    </select>
+	  </div>
+
+	  <div class="form-group">
+	    <label>Body</label>
+	    <textarea type="text" class="form-control" ng-model="article.body" name="article_body" placeholder="Article..."></textarea>
+	  </div>
+	  <button type="submit" class="btn btn-success" ng-click="updateArticle()">Submit</button>
+	  <a href="/#categories" class="btn btn-danger">Cancel</a>
+	</form>
+</div>

@@ -58,6 +58,7 @@ router.put('/', function(req, res, next){
 	var id = req.body.id;
 
 	var data= {
+		id: req.body.id,
 		title: req.body.title,
 	 	category: req.body.category,
 		body: req.body.body
